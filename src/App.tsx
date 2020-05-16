@@ -6,7 +6,6 @@ import {
   Link,
   Redirect
 } from 'react-router-dom';
-
 import Bill from './views/Bill';
 import Add from './views/Add';
 import Chart from './views/Chart';

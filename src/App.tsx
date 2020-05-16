@@ -7,7 +7,10 @@ import {
   Redirect
 } from 'react-router-dom';
 
-import Layout from 'components/Layout';
+import Bill from './views/Bill';
+import Add from './views/Add';
+import Chart from './views/Chart';
+import NoMatch from './views/NoMatch';
 
 function App() {
   return (
@@ -28,38 +31,6 @@ function App() {
             </Route>
           </Switch>
     </Router>
-  );
-}
-
-function NoMatch() {
-  return (
-    <div>
-      页面不存在，请检查地址是否有误！
-    </div>
-  );
-}
-
-function Chart() {
-  return (
-    <Layout>
-      <h1>统计页面</h1>
-    </Layout>
-  );
-}
-
-function Bill() {
-  return (
-    <Layout>
-      <h1>账单页面</h1>
-    </Layout>
-  );
-}
-
-function Add() {
-  return (
-    <Layout>
-      <h1>添加页面</h1>
-    </Layout>
   );
 }
 

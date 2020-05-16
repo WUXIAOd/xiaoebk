@@ -2,6 +2,10 @@ import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import React from 'react';
 
+require('icons/add.svg');
+require('icons/bill.svg');
+require('icons/chart.svg');
+
 const NavWrapper = styled.nav`
   line-height: 24px;
   box-shadow: 0 0 3px rgba(0,0,0,0.25);
@@ -10,26 +14,43 @@ const NavWrapper = styled.nav`
     > li {
       width: 33.3333%;
       text-align: center;
-      padding: 16px;
+      display: flex;
+      padding: 4px 0;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .icon{
+        width: 24px;
+        height: 24px;
+      }
     }
   }
 `;
 
 const Nav = () => {
-  return(
+  return (
     <NavWrapper>
       <ul>
         <li>
-          <Link to="/tags">标签页</Link>
+          <svg className="icon">
+            <use xlinkHref="#bill"/>
+          </svg>
+          <Link to="/tags">账单</Link>
         </li>
         <li>
-          <Link to="/money">记账页</Link>
+          <svg className="icon">
+            <use xlinkHref="#add"/>
+          </svg>
+          <Link to="/money">记账</Link>
         </li>
         <li>
-          <Link to="/statistics">统计页</Link>
+          <svg className="icon">
+            <use xlinkHref="#chart"/>
+          </svg>
+          <Link to="/statistics">数据</Link>
         </li>
       </ul>
     </NavWrapper>
-  )
-}
+  );
+};
 export default Nav;

@@ -1,60 +1,10 @@
 import Layout from '../components/Layout';
 import React from 'react';
 import styled from 'styled-components';
-
-const TagsSection = styled.section`
-  background: #ffffff;
-  padding: 12px 16px; flex-grow: 1;
-  display: flex;flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  >ol{
-    margin: 0 -12px;
-    >li{ background: #FF9FBA;border-radius: 18px; display: inline-block;padding: 3px 18px; font-size: 14px;margin: 8px 12px;
-    }
-  }
-  > button{ background: none; border: none; padding: 2px 4px; border-bottom: 1px solid #333; color: #666; margin-top: 8px;
-  }
-`;
-const NoteSection = styled.section`
-  background: #fff;
-  padding: 0 16px;
-  font-size: 14px;
-  >label{ display: flex; align-items: center;
-    > span{ margin-right: 16px;white-space: nowrap;
-    }
-    > input{ display: block; width: 100%; height: 72px; background: none; border: none;
-    }
-  }
-`;
-const CategorySection = styled.section`
-  > ul {
-  display: flex;
-  background: #dcedc1;
-    > li { width: 50%; text-align: center; padding: 16px 0; position: relative;
-      &.selected::after{ content: '';position: absolute;display: block; height: 3px;width: 100%;bottom: 0;
-        left: 0;background: #FF9FBA; }
-    }
-  }
-`;
-const NumberPadSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  > .output{ background: #fff; font-size: 36px; line-height: 72px; text-align: right; padding: 0 16px;
-     box-shadow: inset 0 -5px 5px -5px rgba(0,0,0,0.5),//上阴影
-                 inset 0 5px 5px -5px rgba(0,0,0,0.5);// 下阴影
-  }
-  > .pad {
-     > button { font-size: 24px;float: left;width: 25%;height: 64px;border: none;
-     &.ok { height: 128px;float: right; }
-     &:nth-child(1){ background: #a8e6cf; }
-     &:nth-child(2), &:nth-child(5){ background: #dcedc1; }
-     &:nth-child(3), &:nth-child(6), &:nth-child(9){ background: #ffd3b6; }
-     &:nth-child(4), &:nth-child(7), &:nth-child(10), &:nth-child(13){ background: #ffaaa5; }
-     &:nth-child(12), &:nth-child(15){ background: #f19292; }
-     }
-  }
-`;
+import {TagsSection} from './Add/TagsSection';
+import {NoteSection} from './Add/NoteSection';
+import {CategorySection} from './Add/CategorySection';
+import {NumberPadSection} from './Add/NumberPadSection';
 
 const MyLayout = styled(Layout)`
    display: flex;

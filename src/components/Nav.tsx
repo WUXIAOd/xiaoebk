@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import {Link} from 'react-router-dom';
 import React from 'react';
-import Icon from './icon';
+import Icon from './Icon';
 
 const NavWrapper = styled.nav`
   line-height: 24px;
@@ -30,15 +30,15 @@ const Nav = () => {
       <ul>
         <li>
           <Icon name="bill"></Icon>
-          <Link to="/tags">账单</Link>
+          <Link to="/bill">账单</Link>
         </li>
         <li>
           <Icon name="add"></Icon>
-          <Link to="/money">记账</Link>
+          <Link to="/add">记账</Link>
         </li>
         <li>
           <Icon name="chart"></Icon>
-          <Link to="/statistics">数据</Link>
+          <Link to="/chart">数据</Link>
         </li>
       </ul>
     </NavWrapper>

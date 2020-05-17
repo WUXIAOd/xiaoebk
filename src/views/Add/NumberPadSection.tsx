@@ -19,11 +19,20 @@ const Wrapper = styled.section`
      }
   }
 `;
-const NumberPadSection:React.FC = () => {
-  const [output, setOutput] = useState('0');
+
+const NumberPadSection: React.FC = () => {
+  const [output, _setOutput] = useState('0');
+  const setOutput = (output: string) => {
+    if (output.length > 16) {
+      output = output.slice(0, 16);
+    } else if (output.length === 0) {
+      output = '0';
+    }
+    _setOutput(output);
+  };
   const onClickButtonWrapper = (e: React.MouseEvent) => {
     const text = (e.target as HTMLButtonElement).textContent;
-    if(text === null){return}
+    if(text === null){return;}
     switch (text) {
       case '0':
       case '1':
@@ -35,34 +44,39 @@ const NumberPadSection:React.FC = () => {
       case '7':
       case '8':
       case '9':
-        if(output === '0'){
+        if (output === '0') {
           setOutput(text);
-        }else{
+        } else {
           setOutput(output + text);
         }
         break;
-      case '删除':
-        console.log('删除')
+      case '.':
+        if (output.indexOf('.') >= 0) {return;}
+        setOutput(output + '.');
+        break;
+      case '退格':
+        if (output.length === 1) {
+          setOutput('');
+        } else {
+          setOutput(output.slice(0, -1));
+        }
         break;
       case '清空':
-        console.log('清空')
+        setOutput('')
         break;
       case '保存':
         console.log('保存')
-        break;
-      case '.':
-        console.log('.')
         break;
     }
   }
   return (
     <Wrapper>
-      <div className="output">{{output}}</div>
+      <div className="output">{output}</div>
       <div className="pad clearfix" onClick={onClickButtonWrapper}>
         <button>1</button>
         <button>2</button>
         <button>3</button>
-        <button>删除</button>
+        <button>退格</button>
         <button>4</button>
         <button>5</button>
         <button>6</button>

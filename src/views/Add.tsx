@@ -14,19 +14,9 @@ const MyLayout = styled(Layout)`
 function Add() {
   return (
     <MyLayout>
-      <TagsSection>
-      </TagsSection>
-      <NoteSection>
-        <label>
-          <span>备注：</span>
-          <input type="text" placeholder="加个备注呗"/>
-        </label>
-      </NoteSection>
+      <TagsSection />
+      <NoteSection />
       <CategorySection>
-        <ul>
-          <li className="selected">支出</li>
-          <li>收入</li>
-        </ul>
       </CategorySection>
       <NumberPadSection>
         <div className="output">100</div>

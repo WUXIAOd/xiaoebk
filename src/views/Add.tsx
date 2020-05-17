@@ -15,13 +15,6 @@ function Add() {
   return (
     <MyLayout>
       <TagsSection>
-        <ol>
-          <li>餐饮</li>
-          <li>住宿</li>
-          <li>服装</li>
-          <li>交通</li>
-        </ol>
-        <button>添加标签</button>
       </TagsSection>
       <NoteSection>
         <label>

@@ -16,8 +16,11 @@ const generateOutput = (text: string, output = '0') => {
         return output + text;
       }
     case '.':
-      if (output.indexOf('.') >= 0) {return output;}
-      return(output + '.');
+      if (output.indexOf('.') >= 0) {
+        return output;
+      } else{
+        return output + '.';
+      }
     case '退格':
       if (output.length === 1) {
         return '';
@@ -29,5 +32,6 @@ const generateOutput = (text: string, output = '0') => {
     default:
       return '';
   }
-}
-export {generateOutput}
+};
+
+export {generateOutput};

@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-import React, {useState} from 'react';
+import React from 'react';
 import {useTags} from 'useTags';
-import {HashRouter as Router, Route, Switch} from 'react-router-dom';
-import Tags from '../Tags';
 
 type Props = {
   value: string[];
@@ -12,7 +10,6 @@ const TagsSection: React.FC<Props> = (props) => {
   const {tags,setTags} = useTags()
   const selectedTags = props.value;
   const onAddTag = () => {
-
     const tagName = window.prompt('新标签名为：');
     if(tagName !== null){
       setTags([...tags, tagName])

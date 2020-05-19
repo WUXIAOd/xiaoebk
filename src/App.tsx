@@ -9,7 +9,8 @@ import Add from './views/Add';
 import Chart from './views/Chart';
 import NoMatch from './views/NoMatch';
 import styled from 'styled-components';
-import Bill from './views/Bill';
+import Tags from './views/Tags';
+
 
 const AppWrapper = styled.div`
 color: #333;
@@ -20,8 +21,8 @@ function App() {
     <AppWrapper>
       <Router>
         <Switch>
-          <Route path="/bill">
-            <Bill />
+          <Route path="/tags">
+            <Tags />
           </Route>
           <Route path="/add">
             <Add/>
@@ -29,7 +30,7 @@ function App() {
           <Route path="/chart">
             <Chart/>
           </Route>
-          <Redirect exact from="/" to="/bill"/>
+          <Redirect exact from="/" to="/tags"/>
           <Route path="*">
             <NoMatch/>
           </Route>

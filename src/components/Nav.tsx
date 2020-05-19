@@ -38,7 +38,7 @@ const Nav = () => {
     <NavWrapper>
       <ul>
         <li>
-          <NavLink to="/bill" activeClassName="selected">
+          <NavLink to="/tags" activeClassName="selected">
             <Icon name="bill"></Icon>
             账单
           </NavLink>

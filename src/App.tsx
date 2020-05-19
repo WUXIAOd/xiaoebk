@@ -10,6 +10,7 @@ import Chart from './views/Chart';
 import NoMatch from './views/NoMatch';
 import styled from 'styled-components';
 import Tags from './views/Tags';
+import {Tag} from './views/Tag';
 
 
 const AppWrapper = styled.div`
@@ -21,13 +22,16 @@ function App() {
     <AppWrapper>
       <Router>
         <Switch>
-          <Route path="/tags">
+          <Route exact path="/tags">
             <Tags />
           </Route>
-          <Route path="/add">
+          <Route exact path="/tags/:tag">
+            <Tag />
+          </Route>
+          <Route exact path="/add">
             <Add/>
           </Route>
-          <Route path="/chart">
+          <Route exact path="/chart">
             <Chart/>
           </Route>
           <Redirect exact from="/" to="/tags"/>

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
 import {useTags} from 'useTags';
+import {creatId} from '../../lib/creatId';
 
 type Props = {
   value: number[];
@@ -12,7 +13,7 @@ const TagsSection: React.FC<Props> = (props) => {
   const onAddTag = () => {
     const tagName = window.prompt('新标签名为：');
     if(tagName !== null){
-      setTags([...tags, { id: Math.random(), name:tagName}]);
+      setTags([...tags, { id: creatId(), name:tagName}]);
     }
   };
   // 如果 tag 已被选中，就复制没有被选中的 tag ，作为新的 selectedTagIds

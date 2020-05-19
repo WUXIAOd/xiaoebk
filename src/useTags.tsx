@@ -10,8 +10,8 @@ const defaultId = [
 
 const useTags = () => { // 封装自定义 Hook
   const [tags, setTags] = useState<{id: number; name: string}[]>(defaultId)
+  const findTag = (id:number) => tags.filter(tag => tag.id === id)[0]
   return{
-    tags,setTags
-  }
+    tags,setTags, findTag }
 }
 export {useTags}

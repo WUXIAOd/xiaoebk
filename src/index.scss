@@ -34,8 +34,8 @@ body{
   width: 2em;
   height: 2em;
 }
-button{
-  font-family: inherit;
+button, input{
+  font: inherit;
 }
 :focus{
   outline: none;

@@ -5,11 +5,11 @@ import {
   Route,
   Redirect
 } from 'react-router-dom';
-import Bill from './views/Bill';
 import Add from './views/Add';
 import Chart from './views/Chart';
 import NoMatch from './views/NoMatch';
 import styled from 'styled-components';
+import Bill from './views/Bill';
 
 const AppWrapper = styled.div`
 color: #333;
@@ -21,7 +21,7 @@ function App() {
       <Router>
         <Switch>
           <Route path="/bill">
-            <Bill/>
+            <Bill />
           </Route>
           <Route path="/add">
             <Add/>

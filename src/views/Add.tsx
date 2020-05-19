@@ -10,6 +10,7 @@ const MyLayout = styled(Layout)`
    display: flex;
    flex-direction: column;
 `;
+
 type Category = '-' | '+'
 
 function Add() {

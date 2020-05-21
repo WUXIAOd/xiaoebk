@@ -8,14 +8,8 @@ type Props = {
   onChange: (selected: number[]) => void;
 }
 const TagsSection: React.FC<Props> = (props) => {
-  const {tags,setTags} = useTags()
+  const {tags,addTag} = useTags()
   const selectedTagIds = props.value;
-  const onAddTag = () => {
-    const tagName = window.prompt('新标签名为：');
-    if(tagName !== null){
-      setTags([...tags, { id: creatId(), name:tagName}]);
-    }
-  };
   // 如果 tag 已被选中，就复制没有被选中的 tag ，作为新的 selectedTagIds
   const onToggleTag = (tagId: number) => {
     const index = selectedTagIds.indexOf(tagId)
@@ -34,7 +28,7 @@ const TagsSection: React.FC<Props> = (props) => {
               className={ getClass(tag.id) }>{tag.name}</li>
         )}
       </ol>
-      <button onClick={onAddTag}>添加标签</button>
+      <button onClick={addTag}>添加标签</button>
     </Wrapper>
   );
 }

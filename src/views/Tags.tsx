@@ -22,7 +22,7 @@ background: #FDFAF1;
 `;
 
 function Tags() {
-  const {tags} = useTags();
+  const {tags,addTag} = useTags();
   return (
     <Layout>
       <TagList>
@@ -37,7 +37,7 @@ function Tags() {
       </TagList>
       <Center>
         <Space/>
-        <Button>新增标签</Button>
+        <Button onClick={addTag}>新增标签</Button>
         <Space/>
       </Center>
     </Layout>

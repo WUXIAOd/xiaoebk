@@ -20,6 +20,11 @@ const defaultFormData = {
   category: '-' as Category,
   amount: 0
 }
+
+const CategoryWrapper = styled.div`
+  background: #FF9FBA;
+`
+
 function Add() {
   const [selected, setSelected] = useState(defaultFormData);
   const {addRecord} = useRecords();
@@ -34,8 +39,6 @@ function Add() {
   }
   return (
     <MyLayout>
-      {JSON.stringify(selected)}
-      <hr/>
       <TagsSection value={selected.tagIds}
                    onChange={ tagIds => onChange(
                      {tagIds}
@@ -46,11 +49,13 @@ function Add() {
                      onChange({ note});
                    }}
       />
-      <CategorySection value={selected.category}
-                        onChange={ category => {
-                          onChange({category})
-                        } }
-      />
+      <CategoryWrapper>
+        <CategorySection value={selected.category}
+                         onChange={ category => {
+                           onChange({category})
+                         } }
+        />
+      </CategoryWrapper>
       <NumberPadSection value={selected.amount}
                         onChange={amount => {onChange({ amount })} }
                         onOk={submit}

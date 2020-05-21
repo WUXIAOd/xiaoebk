@@ -49,8 +49,12 @@ const useTags = () => { // 封装自定义 Hook
     }
   };
 
+  const getName = (id:number) =>{
+    const tag = tags.filter(t => t.id === id)[0]
+    return tag ? tag.name : '';
+  }
   return {
-    tags, setTags, findTag, updateTag, findTagIndex, deleteTag, addTag
+    tags, setTags,getName, findTag, updateTag, findTagIndex, deleteTag, addTag
   };
 };
 export {useTags};

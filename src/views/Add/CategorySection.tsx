@@ -4,10 +4,9 @@ import React, {useState} from 'react';
 const Wrapper = styled.section`
   > ul {
   display: flex;
-  background: #dcedc1;
     > li { width: 50%; text-align: center; padding: 16px 0; position: relative;
       &.selected::after{ content: '';position: absolute;display: block; height: 3px;width: 100%;bottom: 0;
-        left: 0;background: #FF9FBA; }
+        left: 0;background:#4cd3c2;}
     }
   }
 `;
@@ -25,10 +24,10 @@ const CategorySection: React.FC<Props> = (props) => {
     <Wrapper>
     <ul>
       {categoryList.map(c =>
-      <li className={category === c ? 'selected' : ''}
+        <li className={category === c ? 'selected' : ''}
           onClick={()=>{props.onChange(c)}}
           key={c}
-      >{categoryMap[c]}</li>
+        >{categoryMap[c]}</li>
       )}
     </ul>
     </Wrapper>

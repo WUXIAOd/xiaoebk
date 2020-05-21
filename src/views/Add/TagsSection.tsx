@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import React from 'react';
-import {useTags} from 'useTags';
-import {creatId} from '../../lib/creatId';
+import {useTags} from 'hooks/useTags';
 
 type Props = {
   value: number[];
@@ -10,10 +9,10 @@ type Props = {
 const TagsSection: React.FC<Props> = (props) => {
   const {tags,addTag} = useTags()
   const selectedTagIds = props.value;
-  // 如果 tag 已被选中，就复制没有被选中的 tag ，作为新的 selectedTagIds
   const onToggleTag = (tagId: number) => {
     const index = selectedTagIds.indexOf(tagId)
     if(index >= 0){
+      // 如果 tag 已被选中，就复制没有被选中的 tag ，作为新的 selectedTagIds
       props.onChange(selectedTagIds.filter(t => t !== tagId))
     }else{
       props.onChange([...selectedTagIds,tagId])

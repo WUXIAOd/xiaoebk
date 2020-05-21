@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState} from 'react';
-import {creatId} from './lib/creatId';
-import {useUpdate} from './hooks/useUpdate';
+import {creatId} from '../lib/creatId';
+import {useUpdate} from './useUpdate';
 
 const useTags = () => { // 封装自定义 Hook
   const [tags, setTags] = useState<{ id: number; name: string }[]>([]);

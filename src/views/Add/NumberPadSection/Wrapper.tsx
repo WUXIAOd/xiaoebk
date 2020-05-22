@@ -17,6 +17,14 @@ const Wrapper = styled.section`
      &:nth-child(4), &:nth-child(7), &:nth-child(10), &:nth-child(13){ background: #ffaaa5; }
      &:nth-child(12), &:nth-child(15){ background: #f19292; }
      }
+     @media (max-height: 570px){
+     > button{
+     height: 40px;
+     &.ok{
+     height: 80px;
+     }
+     }
+  }
   }
 `;
 export {Wrapper}

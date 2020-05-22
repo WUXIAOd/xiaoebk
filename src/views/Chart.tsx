@@ -32,7 +32,7 @@ function Chart() {
   const hash:{[K: string]: RecordItem[] } = {} // {'2020-05-21': [item,item],'2020-05-22': [item,item]}
   const selectedRecords = records.filter(r => r.category === category);
 
-  selectedRecords.map(r => {
+  selectedRecords.forEach(r => {
    const key = day(r.createAt).format('YYYY-MM-DD')
     if(!(key in hash)){
       hash[key] = []
@@ -55,7 +55,7 @@ function Chart() {
       </CategoryWrapper>
       {array.map(([date,records]) => <div><Header>{date}</Header><div>
         {records.map(r => {
-          return <Item>
+          return <Item key={r.createAt}>
             <div className="tags oneLine">
               {
                 r.tagIds.map(tagId => <span key={tagId}>{getName(tagId)}</span>)

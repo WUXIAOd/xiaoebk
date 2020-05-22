@@ -2,6 +2,7 @@
   "name": "xiaoebk",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://WUXIAOd.github.io/xiaoebk-website/",
   "dependencies": {
     "@babel/core": "7.9.0",
     "@svgr/webpack": "4.3.3",
@@ -60,6 +61,7 @@
     "resolve-url-loader": "3.1.1",
     "sass-loader": "8.0.2",
     "semver": "6.3.0",
+    "serve": "^11.3.0",
     "style-loader": "0.23.1",
     "styled-components": "^5.1.0",
     "terser-webpack-plugin": "2.3.5",
@@ -74,7 +76,10 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "deploy:github": "sh scripts/deploy_github.sh",
+    "deploy:gitee": "sh scripts/deploy_gitee.sh",
+    "deploy": "yarn deploy:github && yarn deploy:gitee"
   },
   "eslintConfig": {
     "extends": "react-app"

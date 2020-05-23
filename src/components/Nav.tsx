@@ -39,8 +39,8 @@ const Nav = () => {
       <ul>
         <li>
           <NavLink to="/tags" activeClassName="selected">
-            <Icon name="bill"></Icon>
-            账单
+            <Icon name="tag"></Icon>
+            标签
           </NavLink>
         </li>
         <li>
@@ -52,7 +52,7 @@ const Nav = () => {
         <li>
           <NavLink to="/chart" activeClassName="selected">
             <Icon name="chart"></Icon>
-            数据
+            账单
           </NavLink>
         </li>
       </ul>
